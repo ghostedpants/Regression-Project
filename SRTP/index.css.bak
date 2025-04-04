@@ -1,0 +1,33 @@
+body {
+	display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically */
+    height: 100vh; /* Full viewport height */
+    margin: 0;
+}
+
+main {
+	width: 800px;
+	height: 500px;
+	justify-content: center;
+	display: flex; /* Make main a flex container */
+	flex-direction: column; /* Stack items vertically */
+	
+
+}
+
+p {
+	border: 2px solid black;
+	padding: 15px;	
+}
+
+#steps {
+	border: 2px solid black;
+	padding: 15px;	
+}
+
+main > button {
+	width: 80px;
+    height: 25px; /* Optional, to control the button's height */
+    margin: 0 auto; /* Ensure it is centered */
+}

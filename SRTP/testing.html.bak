@@ -1,0 +1,50 @@
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewpoint" content="width=device-width", initial-scale=1.0">
+	<link rel="stylesheet" href="testing.css">
+	<script src="testing.js" defer></script>
+	<title>Running</title>
+</head>
+
+<body>
+	<div class="main">
+	
+		<div class="top">
+		
+			<div id="tleft"><label id="clientName">Client Name</label></div> 
+			<div id="tmiddle"><label id="tabName">Regression Tab Name</label></div> 
+			<div id="tright"><button id="abort">Abort</button></div> <br> <br>
+		
+		</div>
+		
+		<div class="middle">
+		
+			<label id="fileContent"></label>
+			
+			<label for="comments">Comments:</label> <br>
+			<textarea id="comments" name="comments"></textarea> <br> <br>
+			
+			<div class="bmiddle">
+				<button id="fail">Fail</button> <button id="pass">Pass</button>
+			</div>
+			
+		</div>
+		
+		<div class="bottom">
+		
+			<button><- Back</button> <label>Regression Line Number</label> <button>Skip -></button>
+		
+		</div>
+	
+	
+	</div>
+	
+	<div id="funnyDiv">
+		<button id="funnyButton"></button>
+	</div>
+	
+</body>
+
+</html>

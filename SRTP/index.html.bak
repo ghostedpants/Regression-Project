@@ -1,0 +1,40 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewpoint" content="width=device-width", initial-scale=1.0">
+		<link rel="stylesheet" href="index.css">
+		<script src="index.js" defer></script>
+		<title>SRTP</title>
+	</head>
+	
+	<body>
+	
+	
+		<!-- Trying to implement newer HTML 5 features, not just using divs everywhere -->	
+		<main>
+	
+			<!-- This is the upload button. Users can upload text files into this. Once selected, the website redirects them to testing.html-->
+			<input type="file" id="fileInput"> 
+			
+			
+		
+			
+			<p>
+				Welcome to the Super Regression Testing Project. Here's a quick guide to get you started.
+				<ol>
+					<li>Open the excel regression document you're using.</li>
+					<li>Go to whichever tab you'd like to test.</li>
+					<li>Copy ONLY the testing steps from the tab (not the column names at the top, or the numbers behind the steps).</li>
+					<li>Paste them into a blank text file.</li>
+					<li>Click the "Choose File" button above and select the file.</li>
+					<li>Click "Begin" to start the program.
+				</ol>
+				
+				<button id="beginButton">Begin</button>
+				
+			
+		</main>
+	
+	</body>
+
+</html>
