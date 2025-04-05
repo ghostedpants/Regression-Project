@@ -18,7 +18,7 @@ body {
 	vertical-align:top;
 }
 
-#fail, #pass {
+#fail, #pass, #download {
 	width: 80px;
 	height: 30px;
 }
@@ -59,12 +59,12 @@ body {
 .bmiddle {
 	justify-content: center;
 	display: flex;
-	gap: 120px;
+	gap: 70px;
 }
 
 .bottom {
 	justify-content: center;
 	display: flex;
-	gap: 60px;
+	gap: 50px;
 }
 
