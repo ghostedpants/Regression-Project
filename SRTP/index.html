@@ -9,15 +9,18 @@
 	
 	<body>
 	
-	
+		<div id="top">
+			<p>Welcome to the Super Regression Testing Project</p>
+		</div>
+
+		
 		<!-- Trying to implement newer HTML 5 features, not just using divs everywhere -->	
 		<main>
 	
-			<!-- This is the upload button. Users can upload text files into this. Once selected, the website redirects them to testing.html-->
-			<input type="file" id="fileInput"> 
 			
-			<p>
-				Welcome to the Super Regression Testing Project. Here's a quick guide to get you started.
+			<div id="left">
+				
+				Here's a quick guide to get you started:
 				<ol>
 					<li>Open the excel regression document you're using.</li>
 					<li>Go to whichever tab you'd like to test.</li>
@@ -26,9 +29,31 @@
 					<li>Click the "Choose File" button above and select the file.</li>
 					<li>Click "Begin" to start the program.
 				</ol>
+			</div>
+			
+			<div id="right">
+			
+				<div id="inputContainer">
+				<!-- This is the upload button. Users can upload text files into this. Once selected, the website redirects them to testing.html-->
+				<input type="file" id="fileInput"> 
+				</div>
+				
+				<div id="labelsAndText">
+					
+					<div id="labels">
+						<label>Client Name:</label>
+						<label>Tab Name:</label>
+					</div>
+					
+					<div id="textFields">
+						<input type="text" id="clientName">
+						<input type="text" id="tabName">
+					</div>
+					
+				</div>
 				
 				<button id="beginButton">Begin</button>
-				
+			</div>
 			
 		</main>
 	

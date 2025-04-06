@@ -2,6 +2,14 @@
 window.onload = function() {
     let fileData = sessionStorage.getItem('fileData');
 
+    // Fetch the Client Name and Tab Name from localStorage
+    const clientName = localStorage.getItem('clientName');
+    const tabName = localStorage.getItem('tabName');
+
+    // Display the Client Name and Tab Name on the second page
+    document.getElementById('clientName').textContent = `${clientName}`;
+    document.getElementById('tabName').textContent = `${tabName}`;
+
     if (fileData) {
         console.log("File data found!");
         
@@ -89,7 +97,6 @@ function updateLineWithComment(status) {
     displayCurrentLine();  // Update the display
 }
 
-
 // Event listener for the "Pass" button (adds "P" and comment to the current line)
 document.getElementById('pass').addEventListener('click', () => {
     if (currentLineIndex < lines.length) {
@@ -131,10 +138,18 @@ document.getElementById('download').addEventListener('click', () => {
     // Create a Blob from the modified content
     let blob = new Blob([modifiedContent], { type: 'text/plain' });
     
+    // Get the client name, tab name, and current date
+    const clientName = localStorage.getItem('clientName');
+    const tabName = localStorage.getItem('tabName');
+    const currentDate = new Date().toLocaleDateString();  // This gives the date in "MM/DD/YYYY" format
+    
+    // Format the filename
+    const filename = `${clientName} - ${tabName} - ${currentDate}.txt`;
+    
     // Create an anchor element for triggering the download
     let link = document.createElement('a');
     link.href = URL.createObjectURL(blob);
-    link.download = 'modified_file.txt';  // Set the default filename
+    link.download = filename;  // Set the filename with the format
     
     // Trigger the download by simulating a click on the link
     link.click();
@@ -145,4 +160,3 @@ window.addEventListener('beforeunload', function (e) {
     e.preventDefault(); // Standard for most browsers
     e.returnValue = ''; // Required for Chrome to show the dialog
 });
-

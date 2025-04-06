@@ -7,6 +7,11 @@ body {
 	animation: moveBackground 8s linear infinite;
 }
 
+main {
+	justify-content: center; /* Centers horizontally */
+
+}
+
 @keyframes moveBackground {
     0% { background-position: 0 0; }
     100% { background-position: 100% 100%; }
@@ -47,24 +52,34 @@ body {
 }
 
 .top {
-	justify-content: center;
+	width: 100%;
 	display: flex;
-	gap: 60px;
+    justify-content: center; /* Centers content horizontally */
+    align-items: center;
+    gap: 60px;
+    /*background-color: red;*/
+	margin-left: 30px;
+
+
 }
 
 .middle {
 	padding-bottom: 50px;
+	width: 100%;
 }
 
 .bmiddle {
 	justify-content: center;
 	display: flex;
 	gap: 70px;
+	width: 100%;
 }
 
 .bottom {
 	justify-content: center;
 	display: flex;
 	gap: 50px;
+	width: 100%;
+
 }
 
