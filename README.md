@@ -5,6 +5,7 @@
 
 <ul>
   <li>Displays test steps one by one.</li>
+  <li>Users are able to fail, pass, and leave comments, just like they normally would.</li>
   <li>Allows the user to "skip" backwards and forwards through test steps.</li>
   <li>Allows the user to go back and edit previous steps (in case they made an error, adding a comment, etc).</li>
   <li>Allows the user to download their test steps at the end of the project in a neatly formatted text file.</li>
