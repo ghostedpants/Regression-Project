@@ -1,3 +1,9 @@
+/*
+Author: Jason Westmark
+Date Created 4/6/2025
+Purpose: Make it easier for me to focus on regression testing.
+*/
+
 document.getElementById('beginButton').addEventListener('click', function() {
     
     let fileInput = document.getElementById("fileInput");

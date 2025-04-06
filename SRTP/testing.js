@@ -1,3 +1,9 @@
+/*
+Author: Jason Westmark
+Date Created 4/6/2025
+Purpose: Make it easier for me to focus on regression testing.
+*/
+
 // Loads the file from the previous page through sessionStorage
 window.onload = function() {
     let fileData = sessionStorage.getItem('fileData');
