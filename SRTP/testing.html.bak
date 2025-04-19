@@ -76,7 +76,7 @@ Purpose: Make it easier for me to focus on regression testing.
 
         <!-- Right sidebar: moved Abort button here -->
         <aside class="sidebar right" style="display: flex; justify-content: center; align-items: start; padding-top: 1rem;">
-            <button id="abort">Abort</button>
+            <button id="abort">Back to Home</button>
         </aside>
     </div>
 </body>

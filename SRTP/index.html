@@ -1,73 +1,48 @@
-<!--
-Author: Jason Westmark
-Date Created 4/6/2025
-Purpose: Make it easier for me to focus on regression testing.
--->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <script src="index.js" defer></script>
+    <title>StepTrack</title>
+</head>
+<body>
+    <div id="top">
+        <p>Welcome to the StepTrack</p>
+    </div>
 
+    <main>
+        <div id="left">
+            <p>Here’s a quick guide to get you started:</p>
+            <ol>
+                <li>Open your Excel regression document.</li>
+                <li>For each tab you want to test, copy its testing steps (including numbering if desired).</li>
+                <li>Paste the steps from each tab into separate text files, ensuring each step is on its own line.</li>
+                <li>Save your text files, naming each after the tab you copied them from, in a location you can easily access.</li>
+                <li>Click the "Choose Files" button above and select all of your test-step text files.</li>
+                <li>Enter the client name.</li>
+                <li>Click "Begin" to load your regression tabs and start testing.</li>
+            </ol>
+        </div>
 
-<html>
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewpoint" content="width=device-width", initial-scale=1.0">
-		<link rel="stylesheet" href="index.css">
-		<script src="index.js" defer></script>
-		<title>SRTP</title>
-	</head>
-	
-	<body>
-	
-		<div id="top">
-			<p>Welcome to the StepTrack</p>
-		</div>
+        <div id="right">
+            <div id="inputContainer">
+                <!-- Allow multiple files to be selected -->
+                <input type="file" id="fileInput" multiple>
+            </div>
+            
+            <div id="labelsAndText">
+                <div id="labels">
+                    <label for="clientName">Client Name:</label>
+                </div>
+                <div id="textFields">
+                    <input type="text" id="clientName" placeholder="Enter client name">
+                </div>
+            </div>
 
-		
-		<!-- Trying to implement newer HTML 5 features, not just using divs everywhere -->	
-		<main>
-	
-			<!-- Nah, divs are easier -->
-			<div id="left">
-				
-				Here's a quick guide to get you started:
-				<ol>
-					<li>Open the excel regression document you're using.</li>
-					<li>Go to whichever tab you'd like to test.</li>
-					<li>Copy the entirety of the testing steps. You can include the number to the left of each step if you'd like. Helps with organization.</li>
-					<li>Paste them into a blank text file. Ensure that each step is on its own line (your computer should do this automatically).</li>
-					<li>Save the text file (can be named anything - just remember where you saved it).</li>
-					<li>Click the "Choose File" button above and select the file.</li>
-					<li>Enter the name of the client you're testing for.</li>
-					<li>Enter the name of the tab you'll be testing.</li>
-					<li>Click "Begin" to start the program.
-				</ol>
-			</div>
-			
-			<div id="right">
-			
-				<div id="inputContainer">
-
-				<!-- This is the upload button. Users can upload text files into this. Once selected, the website redirects them to testing.html-->
-				<input type="file" id="fileInput"> 
-				</div>
-				
-				<div id="labelsAndText">
-					
-					<div id="labels">
-						<label>Client Name:</label>
-						<label>Tab Name:</label>
-					</div>
-					
-					<div id="textFields">
-						<input type="text" id="clientName">
-						<input type="text" id="tabName">
-					</div>
-					
-				</div>
-				
-				<button id="beginButton">Begin</button>
-			</div>
-			
-		</main>
-	
-	</body>
-
+            <button id="beginButton">Begin</button>
+        </div>
+    </main>
+</body>
 </html>
