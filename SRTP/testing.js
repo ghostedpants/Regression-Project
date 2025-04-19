@@ -32,20 +32,36 @@ window.onload = function() {
     }
 };
 
-// Function to display the current line of the file
 function displayCurrentLine() {
     const fileContentEl = document.getElementById('fileContent');
-
+    
     // Check if there are lines available
     if (lines.length > 0 && currentLineIndex < lines.length) {
-        fileContentEl.innerHTML = `<pre>${lines[currentLineIndex]}</pre>`;  // Show the current line
+        // Manually wrap text if it's too long
+        const wrappedText = wrapText(lines[currentLineIndex], 100);  // Wrap lines at 100 characters, adjust as needed
+
+        fileContentEl.innerHTML = wrappedText;  // Use innerHTML to allow line breaks
     } else {
-        fileContentEl.innerHTML = `<pre>No content to display</pre>`;
+        fileContentEl.innerHTML = 'No content to display';
     }
 
     // Update the line number label
     const regressionLineNumberLabel = document.getElementById('lineNumber');
     regressionLineNumberLabel.textContent = `${currentLineIndex + 1} of ${lines.length}`;
+}
+
+// Function to wrap long text at a specified character limit
+function wrapText(text, maxLength) {
+    let result = '';
+    let i = 0;
+
+    // Loop through the text, breaking it at the desired length
+    while (i < text.length) {
+        result += text.substring(i, i + maxLength) + '<br>';  // Insert a line break after every chunk
+        i += maxLength;
+    }
+
+    return result;
 }
 
 // Event listener for the "Back" button
@@ -114,20 +130,6 @@ document.getElementById('pass').addEventListener('click', () => {
 document.getElementById('fail').addEventListener('click', () => {
     if (currentLineIndex < lines.length) {
         updateLineWithComment("F");  // Update the line with "F" and comment
-    }
-});
-
-// Funny button code for toggling background image
-document.getElementById('funnyButton').addEventListener('click', function() {
-    if (document.body.style.backgroundImage) {
-        // If the background is set, remove it
-        document.body.style.backgroundImage = "";
-    } else {
-        // Set a new background image with parallax effect
-        document.body.style.backgroundImage = `url('hotepichedgehogs.png')`;
-        document.body.style.backgroundSize = "auto";
-        document.body.style.backgroundAttachment = "fixed";
-        document.body.style.backgroundPosition = "center";
     }
 });
 
