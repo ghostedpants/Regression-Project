@@ -1,50 +1,84 @@
-<html>
+<!--
+Author: Jason Westmark
+Date Created 4/6/2025
+Purpose: Make it easier for me to focus on regression testing.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewpoint" content="width=device-width", initial-scale=1.0">
-	<link rel="stylesheet" href="testing.css">
-	<script src="testing.js" defer></script>
-	<title>Running</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="testing.css">
+    <script src="testing.js" defer></script>
+    <title>Running</title>
 </head>
 
 <body>
-	<div class="main">
-	
-		<div class="top">
+    <div class="main">
+        <!-- Left sidebar (empty for now) -->
+        <aside class="sidebar left">
 		
-			<div id="tleft"><label id="clientName">Client Name</label></div> 
-			<div id="tmiddle"><label id="tabName">Regression Tab Name</label></div> 
-			<div id="tright"><button id="abort">Abort</button></div> <br> <br>
-		
-		</div>
-		
-		<div class="middle">
-		
-			<label id="fileContent"></label>
-			
-			<label for="comments">Comments:</label> <br>
-			<textarea id="comments" name="comments"></textarea> <br> <br>
-			
-			<div class="bmiddle">
-				<button id="fail">Fail</button> <button id="pass">Pass</button>
+			<div id="notes-container">
+			  <label for="note-input">Notes:</label><br>
+			  <textarea id="note-input" rows="4"></textarea><br>
+			  <button id="save-note">Save</button>
+			  <ul id="notes-list"></ul>
 			</div>
-			
-		</div>
-		
-		<div class="bottom">
-		
-			<button><- Back</button> <label>Regression Line Number</label> <button>Skip -></button>
-		
-		</div>
-	
-	
-	</div>
-	
-	<div id="funnyDiv">
-		<button id="funnyButton"></button>
-	</div>
-	
+            <!-- Future left-column functionality -->
+        </aside>
+
+        <!-- Center column: existing content -->
+        <section class="content">
+            <div class="top">
+                <div id="tleft">
+                    <label id="clientName"></label>
+                </div>
+                <div id="tmiddle">
+                    <label id="tabName">R</label>
+                </div>
+                <div id="tright">
+                    <button id="pin">Pin</button>
+                </div>
+            </div>
+
+            <!-- Pinned step display -->
+            <div id="pinned-step" style="display: none; padding: 1rem; background: #e0e0e0; margin: 0.5rem 0; width: 100%; box-sizing: border-box;">
+                <label id="pinnedContent"></label>
+            </div>
+
+            <div id="steps">
+                <label id="fileContent"></label>
+            </div>
+
+            <div class="middle">
+                <label id="clabel" for="comments">Comments:</label>
+                <textarea id="comments" name="comments"></textarea>
+
+                <div class="bmiddle">
+                    <button id="fail">Fail</button>
+                    <button id="na">N/A</button>
+                    <button id="pass">Pass</button>
+                </div>
+
+                <div class="mbottom">
+                    <label id="lineNumber"></label>
+                </div>
+            </div>
+
+            <div class="bottom">
+                <button id="back">← Back</button>
+                <button id="download">Download</button>
+                <button id="skip">Skip →</button>
+            </div>
+        </section>
+
+        <!-- Right sidebar: moved Abort button here -->
+        <aside class="sidebar right" style="display: flex; justify-content: center; align-items: start; padding-top: 1rem;">
+            <button id="abort">Abort</button>
+        </aside>
+    </div>
 </body>
 
 </html>

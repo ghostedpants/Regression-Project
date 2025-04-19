@@ -1,19 +1,8 @@
+/* Reset & background animation */
 body {
-    display: flex;
-    justify-content: center; /* Centers horizontally */
-    align-items: center; /* Centers vertically */
-    height: 100vh;
     margin: 0;
+    height: 100vh;
     animation: moveBackground 8s linear infinite;
-}
-
-main {
-	display:flex;
-    justify-content: center;
-    width: 500px; /* Prevents it from overflowing */
-    box-sizing: border-box; /* Include padding and border in the width */
-    padding: 10px; /* Optional: Adjust padding to make content more readable */
-    display: block; /* Ensure it's a block-level container */
 }
 
 @keyframes moveBackground {
@@ -21,45 +10,236 @@ main {
     100% { background-position: 100% 100%; }
 }
 
-#clabel {
-	width: 500px; /* Fixed width */
-    vertical-align: top;
-    justify-content: center;
-    margin: 0 auto; /* Center horizontally */
+/* Three-column layout container */
+.main {
+    display: grid;
+    grid-template-columns: 400px 1fr 400px;
+    height: 100%;
 }
 
+/* Sidebars styling */
+.sidebar {
+    padding: 1rem;
+    box-sizing: border-box;
+    background: #f4f4f4;
+}
+.sidebar.left {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow-y: auto; /* allow scrolling if notes overflow */
+}
+
+/* Center content area */
+.content {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Pinned step styling */
+#pinned-step {
+    display: none;
+    padding: 1rem 2rem;
+    background: #e0e0e0;
+    margin: 0.5rem auto;
+    max-width: 90%;
+    box-sizing: border-box;
+    text-align: center;
+    font-weight: bold;
+}
+
+#pinned-step #pinnedContent {
+    display: block;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Notes section in left sidebar */
+#notes-container {
+    width: 100%;
+    margin-bottom: 1rem;
+    text-align: center; /* center label and button */
+}
+
+#notes-container label {
+    font-weight: bold;
+}
+
+#note-input {
+    width: 100%;
+    box-sizing: border-box;
+    height: 80px;
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+    resize: none;  /* disable manual resizing */
+}
+
+#save-note {
+    margin: 0.5rem auto; /* center button */
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    background: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+}
+
+#save-note:hover {
+    background: #0056b3;
+}
+
+#notes-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 1rem;
+    flex: 1; /* fill remaining height */
+    overflow-y: auto; /* scroll when content exceeds */
+}
+
+#notes-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #ccc;
+}
+
+/* Wrap long note text */
+#notes-list li span {
+    flex: 1;
+    word-wrap: break-word;
+    white-space: normal;
+    word-break: break-word;
+    margin-right: 0.5rem;
+    text-align: left; /* align note text to the left */
+}
+
+/* Style copy and delete buttons with box */
+.copy-note,
+.delete-note {
+    border: 1px solid #ccc;
+    background-color: #fff;
+    border-radius: 4px;
+    padding: 0.2rem 0.5rem;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-left: 0.25rem;
+}
+
+.copy-note:hover,
+.delete-note:hover {
+    background-color: #e6e6e6;
+}
+
+/* Comments textarea */
 #comments {
-    width: 500px; /* Fixed width */
-    height: 200px; /* Fixed height */
-    vertical-align: top;
+    width: 500px;
+    height: 200px;
     display: flex;
     justify-content: center;
-    margin: 0 auto; /* Center horizontally */
+    margin: 0 auto;
+    vertical-align: top;
+    margin-bottom: 20px;
+    resize: none;  /* disable manual resizing */
 }
 
-#fail, #pass, #download, #na {
-    width: 80px;
-    height: 30px;
+/* Responsive collapse for narrow screens */
+@media (max-width: 768px) {
+    .main {
+        display: block;
+    }
+    .sidebar,
+    .content {
+        width: 100%;
+    }
+
+    .sidebar.left {
+        height: auto;
+        display: block;
+    }
+
+    #pinned-step {
+        width: 100%;
+        max-width: none;
+        margin: 0.5rem 0;
+    }
 }
 
+/* Top bar */
+.top {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    margin-left: 30px;
+    margin-top: 150px;
+}
+
+/* Steps display */
 #steps {
-	display:flex;
-    width: 100%; /* Ensures it takes up the full width of the screen */
-    word-wrap: break-word; /* Ensures long words wrap correctly */
-	padding:20px;
-	justify-content: center;
+    display: flex;
+    width: 100%;
+    word-wrap: break-word;
+    padding: 20px;
+    justify-content: center;
     align-items: center;
 }
 
 #fileContent {
-    display: block; /* Ensures it's a block-level element */
-    white-space: normal; /* Resets white-space behavior */
-    word-wrap: break-word; /* Breaks long words and wraps them */
-    word-break: break-word; /* Forces breaking of long words */
+    display: block;
+    white-space: normal;
+    word-wrap: break-word;
+    word-break: break-word;
     width: 100%;
-    font-family: monospace; /* Keeps monospace font */
+    font-family: monospace;
+    text-align: center;
 }
 
+/* Comments section label */
+#clabel {
+    width: 500px;
+    margin: 0 auto;
+    vertical-align: top;
+    justify-content: center;
+}
+
+/* Action buttons */
+.bmiddle {
+    display: flex;
+    justify-content: center;
+    gap: 70px;
+    width: 100%;
+    padding-bottom: 30px;
+}
+
+#fail,
+#pass,
+#na,
+#download {
+    width: 80px;
+    height: 30px;
+}
+
+/* Line number */
+.mbottom {
+    display: flex;
+    justify-content: center;
+    gap: 70px;
+    width: 100%;
+}
+
+/* Navigation buttons */
+.bottom {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    width: 100%;
+}
+
+/* Funny button hidden by default */
 #funnyButton {
     position: fixed;
     bottom: 20px;
@@ -73,42 +253,4 @@ main {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-}
-
-.top {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 60px;
-    margin-left: 30px;
-}
-
-.middle {
-	vertical-align: top;
-    padding-bottom: 30px;  
-	justify-content: center;
-    align-items: center;
-}
-
-.bmiddle {
-    justify-content: center;
-    display: flex;
-    gap: 70px;
-    width: 100%;
-    padding-bottom: 30px;
-}
-
-.mbottom {
-    justify-content: center;
-    display: flex;
-    gap: 70px;
-    width: 100%;
-}
-
-.bottom {
-    justify-content: center;
-    display: flex;
-    gap: 50px;
-    width: 100%;
 }

@@ -1,4 +1,4 @@
-1	Verify user can log in with valid credentials.
+1	Verify user can log in with valid's credential's.
 2	Ensure incorrect password displays error message.
 3	Check that 'Forgot Password' redirects correctly.
 4	Validate new user registration form submission.
