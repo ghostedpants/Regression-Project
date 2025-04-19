@@ -87,3 +87,7 @@ p {
 	border: 2px solid black;
 	padding: 15px;
 }
+
+#beginButton {
+	margin-top: 15px;
+}
